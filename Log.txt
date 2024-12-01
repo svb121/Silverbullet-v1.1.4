@@ -1,0 +1,40 @@
+[FATAL][TaskScheduler.UnobservedTaskException] UHANDLED EXCEPTION
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at OpenBullet.CheckUpdate.Run[T](String url) in D:\Projects\Desktop\SilverBullet\OpenBullet\CheckUpdate.cs:line 17
+   at OpenBullet.MainWindow.<.ctor>b__54_0() in D:\Projects\Desktop\SilverBullet\OpenBullet\MainWindow.xaml.cs:line 82
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+   --- End of inner exception stack trace ---
+---> (Inner Exception #0) System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at OpenBullet.CheckUpdate.Run[T](String url) in D:\Projects\Desktop\SilverBullet\OpenBullet\CheckUpdate.cs:line 17
+   at OpenBullet.MainWindow.<.ctor>b__54_0() in D:\Projects\Desktop\SilverBullet\OpenBullet\MainWindow.xaml.cs:line 82
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()<---
+[FATAL][AppDomain.CurrentDomain.UnhandledException] UHANDLED EXCEPTION
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The calling thread cannot access this object because a different thread owns it.
+   at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at MS.Internal.Media.VisualTreeUtils.AsVisual(DependencyObject element, Visual& visual, Visual3D& visual3D)
+   at MS.Internal.Media.VisualTreeUtils.AsNonNullVisual(DependencyObject element, Visual& visual, Visual3D& visual3D)
+   at System.Windows.Media.VisualTreeHelper.GetChildrenCount(DependencyObject reference)
+   at System.Windows.BroadcastEventHelper.AreThereLoadedChangeHandlersInSubtree(FrameworkObject& fo)
+   at System.Windows.BroadcastEventHelper.UpdateHasLoadedChangeHandlerFlagInAncestry(DependencyObject d, Boolean addHandler)
+   at System.Windows.FrameworkElement.OnRemoveHandler(RoutedEvent routedEvent, Delegate handler)
+   at System.Windows.UIElement.RemoveHandler(RoutedEvent routedEvent, Delegate handler)
+   at System.Windows.FrameworkElement.remove_Loaded(RoutedEventHandler value)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.EventInfo.RemoveEventHandler(Object target, Delegate handler)
+   at System.Windows.WeakEventManager`2.StopListening(Object source)
+   at System.Windows.WeakEventManager.Purge(Object source, Object data, Boolean purgeAll)
+   at MS.Internal.WeakEventTable.Purge(Boolean purgeAll)
+   at MS.Internal.WeakEventTable.OnShutDown()
+   at MS.Internal.WeakEventTable.WeakEventTableShutDownListener.OnShutDown(Object target, Object sender, EventArgs e)
+   at MS.Internal.ShutDownListener.HandleShutDown(Object sender, EventArgs e)
